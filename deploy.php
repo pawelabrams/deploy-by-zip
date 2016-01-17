@@ -42,7 +42,7 @@ if ($msg === TRUE) {
 		}
 		$d->close();
 
-		// move
+		// move files to actual destination
 		foreach ($fns as $f)
 		    rename(TMP_DEST.$f, DESTINATION.$f);
 
@@ -52,5 +52,5 @@ if ($msg === TRUE) {
 
     echo 'OK. Everything worked as expected.';
 } else {
-    echo 'FAIL. Something went wrong while opening the archive.'.$msg;
+    echo 'FAIL. Something went wrong while opening the archive. ZipArchive error code: '.$msg;
 }
